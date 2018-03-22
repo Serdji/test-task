@@ -1,1 +1,12 @@
-<div class="item-book"></div>
+<div id="{{book.id}}" class="item-book">
+  <img src="http://via.placeholder.com/235x200/">
+  <div class="item-book__wrapper">
+    <div class="item-book__title">{{book.title}}</div>
+    <div class="item-book__text">Автор: <b>{{book.name + ' ' + book.surname}}</b></div>
+    <div class="item-book__text">Издание: <b>{{book.edition}}</b></div>
+    <div class="item-book__text">Год публикации: <b>{{book.publication}} г.</b></div>
+    <div class="item-book__text">Дата выхода в тираж: <b>{{book.circulation}}</b></div>
+    <div class="item-book__text">ISBN: <b>{{book.isbn}}</b></div>
+    <div class="item-book__text">Кол. стр.: <b>{{book.pages}}</b></div>
+  </div>
+</div>

@@ -10,6 +10,9 @@ import { MainComponent } from './main/main.component';
 import { FormBookComponent } from './form-book/form-book.component';
 import { ItemBookComponent } from './main/item-book/item-book.component';
 
+import { BookService } from './services/book.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -22,9 +25,12 @@ import { ItemBookComponent } from './main/item-book/item-book.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    TextMaskModule
+    TextMaskModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    BookService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

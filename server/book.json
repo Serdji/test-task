@@ -2,11 +2,14 @@
   "book": [
     {
       "id": 0,
-      "name": "test"
-    },
-    {
-      "name": "test2",
-      "id": 1
+      "title": "Мнемоник",
+      "name": "Сергей",
+      "surname": "Суматохин",
+      "pages": "458",
+      "edition": "Оракул",
+      "publication": "2017",
+      "circulation": "24.06.2017",
+      "isbn": "465-4-6-546546-5"
     }
   ]
 }
