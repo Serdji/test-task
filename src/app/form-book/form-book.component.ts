@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
+import { publicationValidator } from '../validatot/publicationValidator';
+
 @Component({
   selector: 'app-form-book',
   templateUrl: './form-book.component.html',
@@ -9,7 +11,9 @@ import { Router } from '@angular/router';
 })
 export class FormBookComponent implements OnInit {
 
-  formBook: FormGroup;
+  public formBook: FormGroup;
+  public isbn: any[] = [/\d/, /\d/, /\d/, '-', /\d/, '-', /\d/, '-', /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/];
+  public date: any[] = [/\d/, /\d/, '.', /\d/, /\d/, '.', /\d/, /\d/, /\d/, /\d/, ];
 
   constructor(
     private fd: FormBuilder,
@@ -27,7 +31,9 @@ export class FormBookComponent implements OnInit {
       surname: ['', [Validators.required, Validators.maxLength(20) ]],
       pages: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(10000), Validators.pattern(/[0-9]/)] ],
       edition: ['', [Validators.maxLength(30) ]],
-      publication: ['', [ Validators.pattern(/[0-9]/)] ],
+      publication: ['', [ Validators.pattern(/[0-9]/), Validators.minLength(4), publicationValidator] ],
+      circulation: ['', [ Validators.pattern(/(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d/)] ],
+      isbn: ['', [ Validators.pattern(/[0-9]/)] ],
     });
   }
 

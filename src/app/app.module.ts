@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TextMaskModule } from 'angular2-text-mask';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -20,7 +21,8 @@ import { ItemBookComponent } from './main/item-book/item-book.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TextMaskModule
   ],
   providers: [],
   bootstrap: [AppComponent]
