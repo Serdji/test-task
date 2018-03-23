@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { timer } from 'rxjs/observable/timer';
 
 import { publicationValidator } from '../validatot/publicationValidator';
 import {BookService} from '../services/book.service';
@@ -35,7 +36,7 @@ export class FormBookComponent implements OnInit {
       pages: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(10000), Validators.pattern(/[0-9]/)] ],
       edition: ['', [Validators.maxLength(30) ]],
       publication: ['', [ Validators.pattern(/[0-9]/), Validators.minLength(4), publicationValidator] ],
-      circulation: ['', [ Validators.pattern(/(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](18|00)\d\d/)] ],
+      circulation: ['' ],
       isbn: ['', [ Validators.pattern(/[0-9]/)] ],
     });
   }
@@ -48,7 +49,7 @@ export class FormBookComponent implements OnInit {
       console.log(this.formBook.value);
       this.bookService.sendBook(this.formBook.value).subscribe(() => {
         this.formOk = true;
-        setTimeout(() => { this.router.navigate(['/']) }, 1000);
+        timer(1000).subscribe(() => { this.router.navigate(['/']) });
       });
     }
   }
