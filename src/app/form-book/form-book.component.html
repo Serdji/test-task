@@ -1,6 +1,7 @@
 <div class="form-book">
   <div class="form-book__go-back" (click)="goBack()"><</div>
-  <form [formGroup]="formBook" class="form-book__form" (submit)="sendForm()">
+  <div class="form-book__ok" *ngIf="formOk">Ок</div>
+  <form *ngIf="!formOk" [formGroup]="formBook" class="form-book__form" (submit)="sendForm()">
     <input type="text" formControlName="title" placeholder="Заголовок" class="form-book__input">
     <input type="text" formControlName="name" placeholder="Имя автора" class="form-book__input">
     <input type="text" formControlName="surname" placeholder="Фамилия автора" class="form-book__input">

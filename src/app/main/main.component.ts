@@ -20,7 +20,7 @@ export class MainComponent implements OnInit {
   }
 
   initBook() {
-    this.bookService.getBook().subscribe((value: Ibook[]) => this.books = value);
+    this.bookService.getBooks().subscribe((value: Ibook[]) => this.books = value);
   }
 
 }

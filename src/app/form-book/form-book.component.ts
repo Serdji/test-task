@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { publicationValidator } from '../validatot/publicationValidator';
+import {BookService} from '../services/book.service';
 
 @Component({
   selector: 'app-form-book',
@@ -14,10 +15,12 @@ export class FormBookComponent implements OnInit {
   public formBook: FormGroup;
   public isbn: any[] = [/\d/, /\d/, /\d/, '-', /\d/, '-', /\d/, '-', /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/];
   public date: any[] = [/\d/, /\d/, '.', /\d/, /\d/, '.', /\d/, /\d/, /\d/, /\d/, ];
+  public formOk: boolean = false;
 
   constructor(
     private fd: FormBuilder,
-    private router: Router
+    private router: Router,
+    private bookService: BookService
   ) { }
 
   ngOnInit() {
@@ -40,6 +43,13 @@ export class FormBookComponent implements OnInit {
   sendForm(): void {
     for (const inner of Object.keys(this.formBook.controls)) {
       this.formBook.get(inner).markAsTouched();
+    }
+    if (this.formBook.valid) {
+      console.log(this.formBook.value);
+      this.bookService.sendBook(this.formBook.value).subscribe(() => {
+        this.formOk = true;
+        setTimeout(() => { this.router.navigate(['/']) }, 1000);
+      });
     }
   }
 
