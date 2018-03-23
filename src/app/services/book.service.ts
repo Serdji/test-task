@@ -13,7 +13,7 @@ export class BookService {
   }
 
   getBook(id) {
-    return this.http.get(`http://localhost:3000/book/${id}`);
+    return this.http.get(`https://my-json-server.typicode.com/Serdji/test-task/blob/demo/book/${id}`);
   }
 
   sendBook(body) {
@@ -21,7 +21,7 @@ export class BookService {
   }
 
   deleteBook(id) {
-    return this.http.delete(`http://localhost:3000/book/${id}`)
+    return this.http.delete(`https://my-json-server.typicode.com/Serdji/test-task/blob/demo/book/${id}`)
   }
 
 }
