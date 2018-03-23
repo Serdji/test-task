@@ -9,7 +9,7 @@ export class BookService {
   ) { }
 
   getBook() {
-    return this.http.get('http://localhost:3000/book');
+    return this.http.get('https://my-json-server.typicode.com/Serdji/test-task/blob/demo/book');
   }
 
 }
