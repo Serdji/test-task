@@ -1,3 +1,15 @@
-<p>
-  form-book works!
-</p>
+<div class="form-book">
+  <div class="form-book__go-back" (click)="goBack()"><</div>
+  <form [formGroup]="formBook" class="form-book__form" (submit)="sendForm()">
+    <input type="text" formControlName="title" placeholder="Заголовок" class="form-book__input">
+    <input type="text" formControlName="name" placeholder="Имя автора" class="form-book__input">
+    <input type="text" formControlName="surname" placeholder="Фамилия автора" class="form-book__input">
+    <input type="text" formControlName="pages" placeholder="Количество страниц" class="form-book__input">
+    <input type="text" formControlName="edition" placeholder="Названия издания" class="form-book__input">
+    <input type="text" formControlName="publication" placeholder="Год публикации (не раньше 1800)" class="form-book__input">
+    <input type="text" formControlName="circulation" placeholder="Дата выхода в тираж (не раньше 01.01.1800)" [textMask]="{mask: date}" class="form-book__input">
+    <input type="text" formControlName="isbn" placeholder="ISBN" [textMask]="{mask: isbn}" class="form-book__input">
+    <!--<input type="file" formControlName="img" placeholder="Изображени" class="form-book__input">-->
+    <button class="form-book__button">Сохранить книгу</button>
+  </form>
+</div>

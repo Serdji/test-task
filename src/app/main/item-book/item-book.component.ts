@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+
+import { Ibook } from '../../interface/ibook';
 
 @Component({
   selector: 'app-item-book',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./item-book.component.styl']
 })
 export class ItemBookComponent implements OnInit {
+
+  @Input() book: Ibook;
 
   constructor() { }
 

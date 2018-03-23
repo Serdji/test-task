@@ -1,6 +1,6 @@
 <div class="main">
   <div class="main__button" routerLink="form-book">Добавить книгу</div>
   <div class="main__content">
-    <app-item-book *ngFor="let i of [1, 2, 3, 4, 5, 6]"></app-item-book>
+    <app-item-book *ngFor="let book of books" [book]="book"></app-item-book>
   </div>
 </div>
