@@ -35,7 +35,7 @@ export class FormBookComponent implements OnInit {
       pages: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(10000), Validators.pattern(/[0-9]/)] ],
       edition: ['', [Validators.maxLength(30) ]],
       publication: ['', [ Validators.pattern(/[0-9]/), Validators.minLength(4), publicationValidator] ],
-      circulation: ['', [ Validators.pattern(/(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d/)] ],
+      circulation: ['', [ Validators.pattern(/(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](18|00)\d\d/)] ],
       isbn: ['', [ Validators.pattern(/[0-9]/)] ],
     });
   }
