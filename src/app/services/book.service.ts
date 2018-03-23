@@ -8,12 +8,12 @@ export class BookService {
     private http: HttpClient
   ) { }
 
-  getBook() {
+  getBooks() {
     return this.http.get('https://my-json-server.typicode.com/Serdji/test-task/blob/demo/book');
   }
 
   sendBook(body) {
-    return this.http.post('http://localhost:3000/book', body);
+    return this.http.post('https://my-json-server.typicode.com/Serdji/test-task/blob/demo/book', body);
   }
 
 }
