@@ -1,0 +1,22 @@
+<div class="card-book">
+  <div class="card-book__go-back" (click)="goBack()"><</div>
+  <div *ngIf="deleteOk" class="card-book__ok">Ok</div>
+  <div *ngIf="!deleteOk" id="{{book?.id}}" class="card-book__wrapper">
+    <div class="card-book__img">
+      <img src="http://via.placeholder.com/235x200/">
+    </div>
+    <div class="card-book__content">
+      <div class="card-book__title">{{book?.title}}</div>
+      <div class="card-book__text">Автор: <b>{{book?.name + ' ' + book?.surname}}</b></div>
+      <div *ngIf="book?.edition" class="card-book__text">Издание: <b>{{book?.edition}}</b></div>
+      <div *ngIf="book?.publication" class="card-book__text">Год публикации: <b>{{book?.publication}} г.</b></div>
+      <div *ngIf="book?.circulation"  class="card-book__text">Дата выхода в тираж: <b>{{book?.circulation}}</b></div>
+      <div *ngIf="book?.circulation" class="card-book__text">ISBN: <b>{{book?.isbn}}</b></div>
+      <div class="card-book__text">Кол. стр.: <b>{{book?.pages}}</b></div>
+      <div class="card-book__wrapper-button">
+        <button class="card-book__put">Редактировать</button>
+        <button class="card-book__delete" (click)="delete(book.id)">Удалить</button>
+      </div>
+    </div>
+  </div>
+</div>
