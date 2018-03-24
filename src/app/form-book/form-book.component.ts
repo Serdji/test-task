@@ -16,6 +16,7 @@ export class FormBookComponent implements OnInit {
   public formBook: FormGroup;
   public isbn: any[] = [/\d/, /\d/, /\d/, '-', /\d/, '-', /\d/, '-', /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/];
   public date: any[] = [/\d/, /\d/, '.', /\d/, /\d/, '.', /\d/, /\d/, /\d/, /\d/, ];
+  public year: any[] = [/\d/, /\d/, /\d/, /\d/, ];
   public formOk: boolean = false;
   private bookId: number;
 
@@ -38,8 +39,8 @@ export class FormBookComponent implements OnInit {
       surname: ['', [Validators.required, Validators.maxLength(20) ]],
       pages: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(10000), Validators.pattern(/[0-9]/)] ],
       edition: ['', [Validators.maxLength(30) ]],
-      publication: ['', [Validators.pattern(/[0-9]/), Validators.minLength(4), publicationValidator] ],
-      circulation: ['' ],
+      publication: ['', [Validators.pattern(/[0-9]/), publicationValidator] ],
+      circulation: ['', [Validators.pattern(/(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](18|20)\d\d/)]],
       isbn: ['', [Validators.required, Validators.pattern(/[0-9]/)] ],
     });
     if (this.bookId) {

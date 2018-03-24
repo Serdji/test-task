@@ -32,6 +32,39 @@
       "circulation": "15.07.2017",
       "isbn": "978-5-6-995457-4",
       "id": 5
+    },
+    {
+      "title": "Секреты JavaScript ниндзя",
+      "name": "Джон",
+      "surname": "Резиг",
+      "pages": "416",
+      "edition": "Вильямс",
+      "publication": "2016",
+      "circulation": "21.05.2016",
+      "isbn": "978-1-9-339886-9",
+      "id": 6
+    },
+    {
+      "title": "JavaScript и jQuery",
+      "name": "Дэвид ",
+      "surname": "Сойер Макфарланд",
+      "pages": "880",
+      "edition": "Эксмо",
+      "publication": "2016",
+      "circulation": "01.02.2016",
+      "isbn": "978-5-6-997911-9",
+      "id": 7
+    },
+    {
+      "title": "JavaScript для детей",
+      "name": "Ник",
+      "surname": "Морган",
+      "pages": "288",
+      "edition": "Манн, Иванов и Фербер",
+      "publication": "2017",
+      "circulation": "03.04.2017",
+      "isbn": "978-5-0-010059-7",
+      "id": 8
     }
   ]
 }
