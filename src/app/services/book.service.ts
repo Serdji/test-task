@@ -9,15 +9,19 @@ export class BookService {
   ) { }
 
   getBooks() {
-    return this.http.get('https://my-json-server.typicode.com/Serdji/test-task/blob/demo/book');
+    return this.http.get('http://localhost:3000/book');
   }
 
   getBook(id) {
-    return this.http.get(`https://my-json-server.typicode.com/Serdji/test-task/blob/demo/book/${id}`);
+    return this.http.get(`http://localhost:3000/book/${id}`);
   }
 
-  sendBook(body) {
-    return this.http.post('https://my-json-server.typicode.com/Serdji/test-task/blob/demo/book', body);
+  postBook(body) {
+    return this.http.post('http://localhost:3000/book', body);
+  }
+
+  putBook(id, body) {
+    return this.http.put(`http://localhost:3000/book/${id}`, body);
   }
 
   deleteBook(id) {

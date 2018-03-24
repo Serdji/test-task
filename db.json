@@ -12,26 +12,59 @@
       "id": 1
     },
     {
-      "title": "Компромисс",
-      "name": "Сергей",
-      "surname": "Довлатов",
-      "pages": "224",
-      "edition": "Азбука, Азбука-Аттикус",
-      "publication": "2011",
-      "circulation": "25.06.2011",
-      "isbn": "978-5-3-890227-7",
-      "id": 3
-    },
-    {
       "title": "ES6 и не только",
       "name": "Кайл",
       "surname": "Симпсон",
       "pages": "330",
       "edition": "Питер",
-      "publication": "2017",
+      "publication": "2016",
       "circulation": "01.01.2007",
       "isbn": "978-5-4-960244-5",
       "id": 4
+    },
+    {
+      "title": "Изучаем Java",
+      "name": "Кэти",
+      "surname": "Сиерра",
+      "pages": "720",
+      "edition": "Эксмо",
+      "publication": "2018",
+      "circulation": "15.07.2017",
+      "isbn": "978-5-6-995457-4",
+      "id": 5
+    },
+    {
+      "title": "Секреты JavaScript ниндзя",
+      "name": "Джон",
+      "surname": "Резиг",
+      "pages": "416",
+      "edition": "Вильямс",
+      "publication": "2014",
+      "circulation": "21.05.2016",
+      "isbn": "978-1-9-339886-9",
+      "id": 6
+    },
+    {
+      "title": "JavaScript и jQuery",
+      "name": "Дэвид ",
+      "surname": "Сойер Макфарланд",
+      "pages": "880",
+      "edition": "Эксмо",
+      "publication": "2011",
+      "circulation": "01.02.2016",
+      "isbn": "978-5-6-997911-9",
+      "id": 7
+    },
+    {
+      "title": "JavaScript для детей",
+      "name": "Ник",
+      "surname": "Морган",
+      "pages": "288",
+      "edition": "Манн, Иванов и Фербер",
+      "publication": "2013",
+      "circulation": "03.04.2017",
+      "isbn": "978-5-0-010059-7",
+      "id": 8
     }
   ]
 }

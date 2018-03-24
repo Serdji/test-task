@@ -1,5 +1,11 @@
 <div class="main">
-  <div class="main__button" routerLink="form-book">Добавить книгу</div>
+  <div class="main__button-wrapper">
+    <div class="main__button" routerLink="form-book">Добавить книгу</div>
+    <div class="main__sorting">
+      <span class="main__year" (click)="sorting('publication')">По году</span>
+      <span class="main__author" (click)="sorting('name')">По автору</span>
+    </div>
+  </div>
   <div class="main__content">
     <app-item-book class="main__item-book" *ngFor="let book of books" [book]="book"></app-item-book>
   </div>

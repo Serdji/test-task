@@ -28,12 +28,16 @@ export class CardBookComponent implements OnInit {
   }
 
   initBook() {
-    this.route.params.subscribe((params) => this.bookId = params.id);
+    this.route.queryParams.subscribe((params) => this.bookId = params.id);
     this.bookService.getBook(this.bookId).subscribe((book: Ibook) => this.book = book);
   }
 
   goBack(): void{
     this.router.navigate(['/']);
+  }
+
+  put(id): void {
+    this.router.navigate(['form-book'], { queryParams : { id } })
   }
 
   delete(id): void {

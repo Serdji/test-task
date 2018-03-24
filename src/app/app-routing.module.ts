@@ -6,7 +6,7 @@ import {CardBookComponent} from './main/card-book/card-book.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
-  { path: 'card-book/:id', component: CardBookComponent },
+  { path: 'card-book', component: CardBookComponent },
   { path: 'form-book', component: FormBookComponent }
 ];
 
