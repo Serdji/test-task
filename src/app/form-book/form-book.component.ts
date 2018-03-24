@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { timer } from 'rxjs/observable/timer';
 
 import { publicationValidator } from '../validatot/publicationValidator';
@@ -17,11 +17,13 @@ export class FormBookComponent implements OnInit {
   public isbn: any[] = [/\d/, /\d/, /\d/, '-', /\d/, '-', /\d/, '-', /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/];
   public date: any[] = [/\d/, /\d/, '.', /\d/, /\d/, '.', /\d/, /\d/, /\d/, /\d/, ];
   public formOk: boolean = false;
+  private bookId: number;
 
   constructor(
     private fd: FormBuilder,
     private router: Router,
-    private bookService: BookService
+    private bookService: BookService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
@@ -29,15 +31,33 @@ export class FormBookComponent implements OnInit {
   }
 
   initForm() {
+    this.route.queryParams.subscribe((params) => this.bookId = params.id);
     this.formBook = this.fd.group({
       title: ['', [ Validators.required, Validators.maxLength(30) ]],
       name: ['', [Validators.required, Validators.maxLength(20) ]],
       surname: ['', [Validators.required, Validators.maxLength(20) ]],
       pages: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(10000), Validators.pattern(/[0-9]/)] ],
       edition: ['', [Validators.maxLength(30) ]],
-      publication: ['', [ Validators.pattern(/[0-9]/), Validators.minLength(4), publicationValidator] ],
+      publication: ['', [Validators.pattern(/[0-9]/), Validators.minLength(4), publicationValidator] ],
       circulation: ['' ],
-      isbn: ['', [ Validators.pattern(/[0-9]/)] ],
+      isbn: ['', [Validators.required, Validators.pattern(/[0-9]/)] ],
+    });
+    if (this.bookId) {
+      this.bookService.getBook(this.bookId).subscribe((value) => this.formBook.patchValue(value));
+    }
+  }
+
+  addItemBook(fomBookValue) {
+    this.bookService.postBook(fomBookValue).subscribe(() => {
+      this.formOk = true;
+      timer(1000).subscribe(() => { this.router.navigate(['/']) });
+    });
+  }
+
+  removeItemBook(id, fomBookValue) {
+    this.bookService.putBook(id, fomBookValue).subscribe(() => {
+      this.formOk = true;
+      timer(1000).subscribe(() => { this.router.navigate(['/']) });
     });
   }
 
@@ -46,11 +66,11 @@ export class FormBookComponent implements OnInit {
       this.formBook.get(inner).markAsTouched();
     }
     if (this.formBook.valid) {
-      console.log(this.formBook.value);
-      this.bookService.sendBook(this.formBook.value).subscribe(() => {
-        this.formOk = true;
-        timer(1000).subscribe(() => { this.router.navigate(['/']) });
-      });
+      if (this.bookId) {
+        this.removeItemBook(this.bookId, this.formBook.value);
+      } else {
+        this.addItemBook(this.formBook.value);
+      }
     }
   }
 

@@ -16,12 +16,16 @@ export class BookService {
     return this.http.get(`http://localhost:3000/book/${id}`);
   }
 
-  sendBook(body) {
+  postBook(body) {
     return this.http.post('http://localhost:3000/book', body);
   }
 
+  putBook(id, body) {
+    return this.http.put(`http://localhost:3000/book/${id}`, body);
+  }
+
   deleteBook(id) {
-    return this.http.delete(`http://localhost:3000/book/${id}`)
+    return this.http.delete(`http://localhost:3000/book/${id}`);
   }
 
 }

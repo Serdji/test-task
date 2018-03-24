@@ -36,6 +36,10 @@ export class CardBookComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
+  put(id): void {
+    this.router.navigate(['form-book'], { queryParams : { id } })
+  }
+
   delete(id): void {
     this.bookService.deleteBook(id).subscribe(() => {
       this.deleteOk = true;
