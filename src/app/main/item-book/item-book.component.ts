@@ -17,6 +17,6 @@ export class ItemBookComponent {
   ) { }
 
   onOpenBook(id): void {
-    this.router.navigate([`/card-book/${id}`]);
+    this.router.navigate(['card-book'], { queryParams: { id }});
   }
 }
