@@ -13,6 +13,7 @@ import { ItemBookComponent } from './main/item-book/item-book.component';
 import { BookService } from './services/book.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CardBookComponent } from './main/card-book/card-book.component';
+import { InputComponent } from './input/input.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { CardBookComponent } from './main/card-book/card-book.component';
     MainComponent,
     FormBookComponent,
     ItemBookComponent,
-    CardBookComponent
+    CardBookComponent,
+    InputComponent
   ],
   imports: [
     BrowserModule,
