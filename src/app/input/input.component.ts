@@ -12,4 +12,13 @@ export class InputComponent implements OnInit {
   ngOnInit() {
   }
 
+  revers() {
+    const htmlElem = document.querySelector('html');
+    if (htmlElem.hasAttribute('dir')){
+      htmlElem.removeAttribute('dir');
+      return;
+    }
+    htmlElem.setAttribute('dir', 'rtl');
+  }
+
 }
