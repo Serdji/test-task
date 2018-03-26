@@ -1,27 +1,21 @@
-# MyApp
+#Тестовое задание
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
+##Запуск проекта локально
 
-## Development server
+1. Открыть 2 консоли;
+2. Выполнить следующаи команды, `npm i` и `npm install -g json-server`;
+3. После установки, запустить проект с помощью следующих, в одной из консоль запустить север, для работы с `json json-server --watch db.json`, в другой консоли запустить сам проект `ng serve`.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+##Возможности
 
-## Code scaffolding
+Возможно создавать новые книги, так же удалять и редактировать, сортировка с сохранение сортировки после перезагрузки странице.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+##Недостатки
 
-## Build
+Нереализовано добавление картинок, верстка инпута с кнопкой.  
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+##Демоверсия
 
-## Running unit tests
+https://nostalgic-kepler-62521c.netlify.com
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+К сожалению так как json запускается локально, нет возможности добавлять, редактировать и удалять кники. Но локально все работает.
