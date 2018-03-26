@@ -27,7 +27,7 @@ export class MainComponent implements OnInit {
 
   sorting(property) {
     localStorage.setItem('sorting', property);
-    timer(0).subscribe(() => this.books.sort(this.dynamicSort(property)));
+    timer(100).subscribe(() => this.books.sort(this.dynamicSort(property)));
   }
 
   private dynamicSort(property) {
