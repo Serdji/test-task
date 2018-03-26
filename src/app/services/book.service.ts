@@ -25,7 +25,7 @@ export class BookService {
   }
 
   deleteBook(id) {
-    return this.http.delete(`https://my-json-server.typicode.com/Serdji/test-task/blob/demo/book/${id}`)
+    return this.http.delete(`https://my-json-server.typicode.com/Serdji/test-task/blob/demo/book/${id}`);
   }
 
 }
